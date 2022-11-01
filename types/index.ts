@@ -17,3 +17,9 @@ export type JSONBlogData = {
   posts: BlogPost[];
   categories: Category[];
 };
+
+export interface BlogPostsRequestParams {
+  page: number;
+  query?: string;
+  category?: Category | null;
+}

@@ -1,4 +1,4 @@
-import { Button, Dropdown } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 import { FC, useRef } from "react";
 import { Category } from "../../../types";
 
@@ -6,7 +6,7 @@ interface SearchProps {
   categories: Category[];
   onChangeCategory: (category: Category) => void;
   onChangeInput: (value: string) => void;
-  selectedCategory: (category: Category) => void;
+  selectedCategory?: Category | null;
 }
 
 export const Search: FC<SearchProps> = ({
