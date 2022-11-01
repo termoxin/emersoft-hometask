@@ -2,17 +2,17 @@
 
 This Next.js application shows an example of React blog application.
 
-Since the basic implementation of this task as has been said should take 2-3 hours on average there left some stuff for improvements, namely points below are applicable for real-world production blog):
+Since the basic implementation of this task as has been said should take 2-3 hours on average there are some stuff left for improvements, namely (points below are applicable for real-world production blog):
 
-- Make app fully compliant with WAI-ARIA (even though some of parts of the app can be detected and interacted with by screen readers, but it'd be great to have a full WAI-ARIA coverage when it comes to real-world blog)
+- Make app fully compliant with WAI-ARIA (even though some of parts of the app can be detected and interacted by screen readers, but it'd be great to have a full WAI-ARIA coverage when it comes to real-world blog)
 - Add tests coverage
 - Provide better type safety
 - Get rid of redundant re-renders (e.g. leverage `useReducer` hook to set a few pieces of state in one action)
 - Create documentation for components and functions (e.g. Storybook)
 - Provide caching (SWR internal functionality)
 - Add better error handing and some error tracking software (e.g. Sentry)
-- Modern blogging platforms are not simple blog apps, they are complicated systems that has been built with care about readers and content creeators
-- And so many other features ⭐
+- Organize tailwind classes in alises for reusability
+- And so many other stuff
 
 <a href="emersoft-hometask.vercel.app" target="_blank">DEMO</a>
 
