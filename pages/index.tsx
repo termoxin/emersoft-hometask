@@ -90,7 +90,7 @@ export default function Home({
             </Card>
           )}
 
-          {!!data?.posts.length && !isLoading && (
+          {!!data?.posts.length && (
             <div className="flex flex-col items-center justify-center text-center mt-6">
               <p className="text-sm text-gray-700 dark:text-gray-400">
                 Showing{" "}
