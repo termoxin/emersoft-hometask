@@ -1,34 +1,60 @@
+# Emersoft hometask
+
+This Next.js application shows an example of React blog application.
+
+Since the basic implementation of this task as has been said should take 2-3 hours on average there left some stuff for improvements, namely points below are applicable for real-world production blog):
+
+- Make app fully compliant with WAI-ARIA (even though some of parts of the app can be detected and interacted with by screen readers, but it'd be great to have a full WAI-ARIA coverage when it comes to real-world blog)
+- Add tests coverage
+- Provide better type safety
+- Get rid of redundant re-renders (e.g. leverage `useReducer` hook to set a few pieces of state in one action)
+- Create documentation for components and functions (e.g. Storybook)
+- Provide caching (SWR internal functionality)
+- Add better error handing and some error tracking software (e.g. Sentry)
+- Modern blogging platforms are not simple blog apps, they are complicated systems that has been built with care about readers and content creeators
+- And so many other features ⭐
+
+<a href="emersoft-hometask.vercel.app" target="_blank">DEMO</a>
+
+## 🚀 Quick start
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, run the packages installation:
 
 ```bash
-npm run dev
-# or
+yarn
+```
+
+Run dev server:
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build app and run:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+yarn start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📄 Task
 
-## Learn More
+### Technology Requirements
 
-To learn more about Next.js, take a look at the following resources:
+1. latest NextJS
+2. tailwindcss
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Task Description
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Simple Blog page with SSR.
+2. Create simple API endpoints to fetch, search and filter blog posts
+3. Simple pagination - button `next` and `prev` page
+4. Search blog posts by title
+5. Simple Filter by Category
+6. Simple page to display blog post - title, image, excerpt, list of categories.
+7. Use provided JSON file with example posts.
