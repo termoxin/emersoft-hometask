@@ -49,5 +49,9 @@ export default async function blogHandler(
     +page
   );
 
-  res.status(200).json({ posts: paginated.items, hasMore: paginated.hasMore });
+  res.status(200).json({
+    posts: paginated.items,
+    hasMore: paginated.hasMore,
+    totalPages: Math.ceil(paginated.total / POSTS_PER_PAGE),
+  });
 }
