@@ -20,6 +20,16 @@ export const BlogPostCard: FC<BlogPostCardProps> = ({
 }) => {
   const [shouldUseFallback, setShouldUseFallback] = useState(false);
 
+  const categoriesElements = categories.map((category) => (
+    <Badge
+      key={category.id}
+      className={`text-gray-800 ${CATEGORY_COLORS[category.id] || "gray"}`}
+      size="sm"
+    >
+      {category.name}
+    </Badge>
+  ));
+
   return (
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <Image
@@ -30,19 +40,7 @@ export const BlogPostCard: FC<BlogPostCardProps> = ({
         onError={() => setShouldUseFallback(true)}
       />
       <div className="p-5">
-        <div className="flex gap-2 mb-4">
-          {categories.map((category) => (
-            <Badge
-              key={category.id}
-              className={`text-gray-800 ${
-                CATEGORY_COLORS[category.id] || "gray"
-              }`}
-              size="sm"
-            >
-              {category.name}
-            </Badge>
-          ))}
-        </div>
+        <div className="flex gap-2 mb-4">{categoriesElements}</div>
 
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {title}
