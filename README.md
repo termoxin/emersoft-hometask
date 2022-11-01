@@ -12,6 +12,7 @@ Since the basic implementation of this task as has been said should take 2-3 hou
 - Provide caching (SWR internal functionality)
 - Add better error handing and some error tracking software (e.g. Sentry)
 - Organize tailwind classes in alises for reusability
+- Add authentication for endpoints so they cannot be triggered for malicious purposes
 - And so many other stuff
 
 <a href="emersoft-hometask.vercel.app" target="_blank">DEMO</a>
