@@ -9,16 +9,20 @@ interface PaginationProps {
   setParams: Dispatch<SetStateAction<BlogPostsRequestParams>>;
 }
 
-export const Pagination: FC<PaginationProps> = ({ page, data, setParams }) => {
+export const Pagination: FC<PaginationProps> = ({
+  page: currentPage,
+  data,
+  setParams,
+}) => {
   const onPageChange = useCallback(
     (page: number) => {
-      if (page !== data?.totalPages && page !== page) {
+      if (page !== data?.totalPages && page !== currentPage) {
         window.scrollTo(0, 0);
       }
 
       setParams((state) => ({ ...state, page }));
     },
-    [data?.totalPages, setParams]
+    [currentPage, data?.totalPages, setParams]
   );
 
   return (
@@ -28,7 +32,7 @@ export const Pagination: FC<PaginationProps> = ({ page, data, setParams }) => {
           <p className="text-sm text-gray-700 dark:text-gray-400">
             Showing{" "}
             <span className="font-semibold text-gray-900 dark:text-white">
-              {page}
+              {currentPage}
             </span>{" "}
             of{" "}
             <span className="font-semibold text-gray-900 dark:text-white">
@@ -37,7 +41,7 @@ export const Pagination: FC<PaginationProps> = ({ page, data, setParams }) => {
             pages
           </p>
           <FlowbitePagination
-            currentPage={page}
+            currentPage={currentPage}
             layout="navigation"
             onPageChange={onPageChange}
             showIcons={true}

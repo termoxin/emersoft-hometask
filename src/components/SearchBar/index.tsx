@@ -1,5 +1,5 @@
 import { Dropdown } from "flowbite-react";
-import { FC, useCallback, useMemo, useRef } from "react";
+import { FC, KeyboardEvent, useCallback, useMemo, useRef } from "react";
 import { Category } from "../../../types";
 
 interface SearchBarProps {
@@ -38,10 +38,21 @@ export const SearchBar: FC<SearchBarProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const onSearch = useCallback(() => {
+  const applySearch = useCallback(() => {
     const value = inputRef?.current?.value;
     onChangeInput(value || "");
   }, [onChangeInput]);
+
+  const onSearch = useCallback(applySearch, [applySearch]);
+
+  const onKeyUp = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Enter") {
+        applySearch();
+      }
+    },
+    [applySearch]
+  );
 
   const dropdownList = useMemo(
     () =>
@@ -79,6 +90,7 @@ export const SearchBar: FC<SearchBarProps> = ({
           type="search"
           className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300  dark:bg-gray-700 dark:border-l-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
           placeholder="Search by blog post title..."
+          onKeyUp={onKeyUp}
           ref={inputRef}
           required
         />
