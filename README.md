@@ -13,6 +13,7 @@ Since the basic implementation of this task as has been said should take 2-3 hou
 - Add better error handing and some error tracking software (e.g. Sentry)
 - Organize tailwind classes in alises for reusability
 - Add authentication for endpoints so they cannot be triggered for malicious purposes
+- SEO integration, so the posts can be indexed by search engines
 - And so many other stuff
 
 <a href="emersoft-hometask.vercel.app" target="_blank">DEMO</a>
